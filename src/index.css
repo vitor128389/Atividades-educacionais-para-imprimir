@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Artistic Flair custom theme styles */
+.artistic-header {
+  border-bottom: 4px solid #facc15; /* border-yellow-400 */
+}
+
+.btn-artistic-emerald {
+  @apply py-4 px-10 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl font-black text-lg shadow-[0_6px_0_rgb(5,150,105)] active:translate-y-1 active:shadow-none transition-all duration-75 uppercase tracking-tight cursor-pointer;
+}
+
+.btn-artistic-rose {
+  @apply py-3.5 px-6 bg-rose-500 hover:bg-rose-600 text-white font-black rounded-2xl shadow-[0_6px_0_rgb(190,24,74)] active:translate-y-1 active:shadow-none transition-all duration-75 uppercase tracking-tight cursor-pointer;
+}
+
+.btn-artistic-blue {
+  @apply py-3.5 px-8 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-2xl shadow-[0_6px_0_rgb(29,78,216)] active:translate-y-1 active:shadow-none transition-all duration-75 uppercase tracking-tight cursor-pointer;
+}
+
+.card-artistic {
+  @apply bg-white p-6 rounded-3xl border-2 border-blue-100 shadow-xl relative overflow-hidden;
+}
+
+/* Custom bounce / pulse keyframes */
+@keyframes softPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.soft-pulse {
+  animation: softPulse 2s infinite ease-in-out;
+}
+
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.slow-rotate {
+  animation: slowRotate 24s infinite linear;
+}
+
+/* Print custom rules for worksheets */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-ready-layout, .print-ready-layout * {
+    visibility: visible;
+  }
+  .print-ready-layout {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
