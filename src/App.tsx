@@ -100,7 +100,7 @@ export default function App() {
       <div className="bg-red-600 text-white font-semibold fixed top-0 left-0 right-0 z-50 shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-4 text-center">
           <span className="text-xs sm:text-sm font-black tracking-wide flex items-center gap-1.5 justify-center">
-            PROMOÇÃO VÁLIDA APENAS HOJE
+            PROMOÇÃO VÁLIDA APENAS HOJE!
           </span>
           <div className="flex items-center gap-1 bg-white/20 px-3 py-0.5 rounded-full text-xs font-mono select-none">
             <Clock className="w-4.5 h-4.5" />
@@ -295,9 +295,9 @@ export default function App() {
 
                 <button
                   onClick={() => handleOpenCheckout('basic')}
-                  className="btn-artistic-emerald w-full text-center sm:text-lg flex items-center justify-center gap-2 mt-4 cursor-pointer"
+                  className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-3 px-6 rounded-2xl shadow-[0_4px_0_rgb(5,150,105)] active:translate-y-0.5 active:shadow-none transition-all duration-75 text-sm sm:text-base cursor-pointer uppercase tracking-tight flex items-center justify-center gap-2 mt-4"
                 >
-                  <ShoppingCart className="w-5 h-5 shrink-0" />
+                  <ShoppingCart className="w-4 h-4 shrink-0" />
                   ADQUIRIR PLANO BÁSICO
                 </button>
               </div>
@@ -359,9 +359,9 @@ export default function App() {
 
                 <button
                   onClick={() => handleOpenCheckout('premium')}
-                  className="btn-artistic-emerald w-full text-center sm:text-lg flex items-center justify-center gap-2 mt-4 cursor-pointer soft-pulse"
+                  className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-3 px-6 rounded-2xl shadow-[0_4px_0_rgb(5,150,105)] active:translate-y-0.5 active:shadow-none transition-all duration-75 text-sm sm:text-base cursor-pointer uppercase tracking-tight flex items-center justify-center gap-2 mt-4 soft-pulse"
                 >
-                  <ShoppingCart className="w-5 h-5 shrink-0" />
+                  <ShoppingCart className="w-4 h-4 shrink-0" />
                   ADQUIRIR PLANO PREMIUM
                 </button>
 
