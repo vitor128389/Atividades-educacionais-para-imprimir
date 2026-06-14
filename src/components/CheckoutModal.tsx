@@ -164,16 +164,15 @@ export default function CheckoutModal({ isOpen, onClose, selectedPlan }: Checkou
                   </div>
 
                   <div className="space-y-2.5 pt-1">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setCurrentPlan('premium-upsell');
-                        setShowUpsell(false);
-                      }}
-                      className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-2.5 px-4 rounded-xl shadow-[0_3px_0_rgb(5,150,105)] active:translate-y-0.5 active:shadow-none transition-all duration-75 text-xs sm:text-sm cursor-pointer uppercase tracking-tight flex items-center justify-center gap-1.5 soft-pulse"
+                    <a
+                      href="https://pay.wiapy.com/AgumUrd9H-8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={onClose}
+                      className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-2.5 px-4 rounded-xl shadow-[0_3px_0_rgb(5,150,105)] active:translate-y-0.5 active:shadow-none transition-all duration-75 text-xs sm:text-sm cursor-pointer uppercase tracking-tight flex items-center justify-center gap-1.5 soft-pulse text-center"
                     >
                       SIM! QUERO O PLANO PREMIUM COM DESCONTO (R$ 17)
-                    </button>
+                    </a>
 
                     <a
                       href="https://pay.wiapy.com/Pa1XKNff1v"
