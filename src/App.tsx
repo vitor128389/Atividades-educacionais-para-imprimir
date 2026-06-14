@@ -82,14 +82,22 @@ export default function App() {
   }, []);
 
   const handleOpenCheckout = (plan: 'basic' | 'premium' = 'premium') => {
+    if (plan === 'basic') {
+      window.open('https://pay.wiapy.com/Pa1XKNff1v', '_blank', 'noopener,noreferrer');
+      return;
+    }
+    if (plan === 'premium') {
+      window.open('https://pay.wiapy.com/bFiA7MC0-Ic', '_blank', 'noopener,noreferrer');
+      return;
+    }
     setCheckoutPlan(plan);
     setIsCheckoutOpen(true);
   };
 
   const scrollToPricing = () => {
-    const el = document.getElementById('pricing');
+    const el = document.getElementById('plano-basico-btn');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
 
@@ -238,14 +246,14 @@ export default function App() {
       </section>
 
       {/* 11. FINAL OFFER SECTION (Pricing block) */}
-      <section id="pricing" className="py-20 bg-white relative overflow-hidden border-t border-gray-100">
+      <section id="pricing" className="py-20 bg-white relative overflow-hidden border-t border-gray-100 scroll-mt-16">
         
         {/* Dynamic cute dots in canvas */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-full mix-blend-multiply opacity-20"></div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           
-          <div className="max-w-2xl mx-auto mb-10">
+          <div id="pricing-header-scroll" className="max-w-2xl mx-auto mb-10 scroll-mt-24 sm:scroll-mt-28">
             <span className="bg-emerald-100 text-emerald-800 font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm tracking-wide uppercase shadow-sm inline-flex items-center gap-1">
               🎉 SUPER DESCONTO DE LANÇAMENTO
             </span>
@@ -258,7 +266,7 @@ export default function App() {
           </div>
 
           {/* Dual Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+          <div id="pricing-cards" className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
             
             {/* PLANO BÁSICO */}
             <div className="bg-white rounded-3xl p-6 sm:p-8 border-4 border-emerald-500 shadow-[8px_8px_0px_rgba(16,185,129,1)] relative flex flex-col justify-between">
@@ -293,13 +301,16 @@ export default function App() {
                   <span className="text-[10px] text-gray-400 uppercase font-semibold">Sem mensalidades, pagamento único</span>
                 </div>
 
-                <button
-                  onClick={() => handleOpenCheckout('basic')}
+                <a
+                  id="plano-basico-btn"
+                  href="https://pay.wiapy.com/Pa1XKNff1v"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-3 px-6 rounded-2xl shadow-[0_4px_0_rgb(5,150,105)] active:translate-y-0.5 active:shadow-none transition-all duration-75 text-sm sm:text-base cursor-pointer uppercase tracking-tight flex items-center justify-center gap-2 mt-4"
                 >
                   <ShoppingCart className="w-4 h-4 shrink-0" />
                   ADQUIRIR PLANO BÁSICO
-                </button>
+                </a>
               </div>
             </div>
 
@@ -357,13 +368,15 @@ export default function App() {
                   <span className="text-[10px] text-gray-400 uppercase font-semibold block font-sans">Sem mensalidades, bônus inclusos!</span>
                 </div>
 
-                <button
-                  onClick={() => handleOpenCheckout('premium')}
-                  className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-3 px-6 rounded-2xl shadow-[0_4px_0_rgb(5,150,105)] active:translate-y-0.5 active:shadow-none transition-all duration-75 text-sm sm:text-base cursor-pointer uppercase tracking-tight flex items-center justify-center gap-2 mt-4 soft-pulse"
+                <a
+                  href="https://pay.wiapy.com/bFiA7MC0-Ic"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-3 px-6 rounded-2xl shadow-[0_4px_0_rgb(5,150,105)] active:translate-y-0.5 active:shadow-none transition-all duration-75 text-sm sm:text-base cursor-pointer uppercase tracking-tight flex items-center justify-center gap-2 mt-4 soft-pulse text-center justify-center"
                 >
                   <ShoppingCart className="w-4 h-4 shrink-0" />
                   ADQUIRIR PLANO PREMIUM
-                </button>
+                </a>
 
               </div>
             </div>

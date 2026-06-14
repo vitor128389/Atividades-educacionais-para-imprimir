@@ -175,16 +175,15 @@ export default function CheckoutModal({ isOpen, onClose, selectedPlan }: Checkou
                       SIM! QUERO O PLANO PREMIUM COM DESCONTO (R$ 17)
                     </button>
 
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setCurrentPlan('basic');
-                        setShowUpsell(false);
-                      }}
-                      className="text-[10px] font-bold text-gray-400 hover:text-gray-600 underline cursor-pointer block mx-auto"
+                    <a
+                      href="https://pay.wiapy.com/Pa1XKNff1v"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={onClose}
+                      className="text-[10px] font-bold text-gray-400 hover:text-gray-600 underline cursor-pointer block text-center mx-auto"
                     >
                       Não, obrigado. Quero apenas o Básico por R$ 10,00
-                    </button>
+                    </a>
                   </div>
                 </div>
               ) : (
