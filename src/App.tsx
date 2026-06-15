@@ -17,9 +17,8 @@ import {
   WHO_IS_FOR, BENEFITS, TESTIMONIALS, INTRO_HIGHLIGHTS 
 } from './data';
 
-// Import the mockup image using standard ES modules so Vite can resolve and bundle it correctly
 // @ts-expect-error - Vite handles static image imports during bundling
-import heroWorksheets from './assets/images/hero_worksheets_1781354834148.jpg';
+import heroMockup from './assets/images/educational_worksheets_mockup_1781359941841.jpg';
 
 export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -159,25 +158,11 @@ export default function App() {
               <div className="relative max-w-[480px] w-full p-4 sm:p-5 bg-white rounded-3xl border-4 border-emerald-500 shadow-[8px_8px_0px_rgba(16,185,129,1)] transform hover:rotate-1 duration-300 group">
                 
                 <img
-                  src={heroWorksheets}
+                  src={heroMockup}
                   alt="500+ Atividades Educacionais Para Imprimir"
                   referrerPolicy="no-referrer"
-                  className="rounded-2xl w-full h-auto object-cover max-h-[440px] shadow"
+                  className="rounded-2xl w-full h-auto object-cover shadow"
                 />
-
-                {/* Overlaid tags for child attraction criteria */}
-                <div className="absolute -top-3 -right-3 bg-red-500 text-white text-xs font-black py-2 px-3 rounded-full shadow-lg transform rotate-6 tracking-wide flex items-center gap-1 uppercase">
-                  <Award className="w-4 h-4" /> Campeão de Vendas
-                </div>
-
-                <div className="absolute -bottom-3 -left-3 bg-blue-600 text-white text-xs font-bold py-2 px-3.5 rounded-full shadow-lg transform -rotate-3 leading-tight">
-                  ⭐ 500+ Atividades Prontas
-                </div>
-
-                <div className="absolute bottom-1/2 -right-4 bg-yellow-400 text-gray-900 text-[11px] font-black p-2.5 rounded-2xl shadow-md rotate-12 flex flex-col items-center">
-                  <span>VITALÍCIO</span>
-                  <span className="text-[10px] opacity-80">A PARTIR DE R$ 10</span>
-                </div>
 
               </div>
 
